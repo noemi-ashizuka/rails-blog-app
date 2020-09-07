@@ -12,7 +12,7 @@
   <% @articles.each do |article| %>
     <tr>
       <td><%= article.title %></td>
-      <td>views here</td>
+      <td><%= article.hits %></td>
       <td><%= article.user.email %></td>
       <td><%= article.date %></td>
       <td>actions here</td>
