@@ -1,0 +1,8 @@
+<h1>New Article</h1>
+
+<%= simple_form_for @article do |f| %>
+  <%= f.input :title, label: "Title", error: "Please insert a title" %>
+  <%= f.input :date, as: :date, label: "Publish Date" %>
+  <%= f.input :content, as: :text, label:"Content" %>
+  <%= f.submit "Save" %>
+<% end %> 
