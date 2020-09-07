@@ -1,1 +1,22 @@
 <h1><%= @articles.count %> Articles</h1>
+
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Views</th>
+    <th>Author</th>
+    <th>Publish Date</th>
+    <th>Actions</th>
+
+  </tr>
+  <% @articles.each do |article| %>
+    <tr>
+      <td><%= article.title %></td>
+      <td>views here</td>
+      <td><%= article.user.email %></td>
+      <td><%= article.date %></td>
+      <td>actions here</td>
+    </tr>
+
+  <% end %>
+</table>
