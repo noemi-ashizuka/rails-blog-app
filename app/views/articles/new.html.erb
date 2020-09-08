@@ -2,7 +2,7 @@
 
 <%= simple_form_for @article do |f| %>
   <%= f.input :title, label: "Title", error: "Please insert a title" %>
-  <%= f.input :date, as: :date, label: "Publish Date" %>
+  <%= f.input :date, as: :date, html5: true, label: "Publish Date" %>
   <%= f.input :content, as: :text, label:"Content" %>
   <%= f.submit "Save" %>
 <% end %> 
