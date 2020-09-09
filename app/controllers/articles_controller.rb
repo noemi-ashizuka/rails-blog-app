@@ -1,11 +1,12 @@
 class ArticlesController < ApplicationController
+  include Pagy::Backend
   skip_before_action :authenticate_user!, only: [:index, :show]
 
   def index
     if params[:query].present?
-      @articles = Article.where("lower(title) LIKE lower(?)", "%#{params[:query]}%")
+      @pagy, @articles = pagy(Article.where("lower(title) LIKE lower(?)", "%#{params[:query]}%"), items: 5)
     else
-      @articles = Article.all
+      @pagy, @articles = pagy(Article.all, items: 5)
     end
   end
 

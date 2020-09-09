@@ -2,7 +2,7 @@
   <%= current_user.username.capitalize %>
   <%= link_to "Log out", destroy_user_session_path, method: :delete %>
 <% end %>
-<h1><%= @articles.count %> Articles</h1>
+<h1><%= @pagy.count %> Articles</h1>
 <%= render "search" %>
 <%= link_to "New", new_article_path %>
 
@@ -29,3 +29,5 @@
     </tr>
   <% end %>
 </table>
+
+<%== pagy_bootstrap_nav(@pagy).html_safe %>
