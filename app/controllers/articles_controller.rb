@@ -2,7 +2,11 @@ class ArticlesController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
 
   def index
-    @articles = Article.all
+    if params[:query].present?
+      @articles = Article.where("lower(title) LIKE lower(?)", "%#{params[:query]}%")
+    else
+      @articles = Article.all
+    end
   end
 
   def show
