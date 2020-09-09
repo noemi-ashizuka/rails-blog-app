@@ -7,12 +7,14 @@ puts "creating Users"
 
 joe = User.create!(
   email: "joe@example.com",
-  password: "123456"
+  password: "123456",
+  username: "joe"
 )
 
 sylvia = User.create!(
   email: "sylvia@example.com",
-  password: "123456"
+  password: "123456",
+  username: "Sylvia"
 )
 
 puts "Users created"
