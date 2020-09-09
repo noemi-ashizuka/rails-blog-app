@@ -1,5 +1,5 @@
 <% if user_signed_in? %>
-  <%= current_user.username %>
+  <%= current_user.username.capitalize %>
   <%= link_to "Log out", destroy_user_session_path, method: :delete %>
 <% end %>
 <h1><%= @articles.count %> Articles</h1>
@@ -19,7 +19,7 @@
     <tr>
       <td><%= article.title %></td>
       <td><%= article.hits %></td>
-      <td><%= article.user.email %></td>
+      <td><%= article.user.username.capitalize %></td>
       <td><%= article.date %></td>
       <td>
         <%= link_to "Show", article_path(article) %> | 
