@@ -7,6 +7,7 @@ class ArticlesController < ApplicationController
       @pagy, @articles = pagy(Article.published.where("lower(title) LIKE lower(?)", "%#{params[:query]}%"), items: 5)
     else
       @pagy, @articles = pagy(Article.published, items: 5)
+      @drafts = Article.draft
     end
   end
 
