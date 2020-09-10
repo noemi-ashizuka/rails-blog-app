@@ -1,0 +1,19 @@
+<h1>Manage your articles</h1>
+
+<% if current_user.articles.published.any? %>
+  <h2>Your articles</h2>
+  <% current_user.articles.published.each do |article| %>
+    <p>
+      <%= article.title %> | <%= link_to "Show", article_path(article) %> | 
+      <%= link_to "Edit", edit_article_path(article) %> | 
+      <%= link_to "Delete", article_path(article), method: :delete %>
+    </p>
+  <% end %>
+<% end %>
+
+<% if current_user.articles.draft.any? %>
+  <h2>Your unpublished articles</h2>
+  <% current_user.articles.draft.each do |draft| %>
+    <p><%= draft.title %> | <%= link_to "Edit", edit_article_path(draft) %></p>
+  <% end %>
+<% end %>

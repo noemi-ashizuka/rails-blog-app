@@ -1,5 +1,6 @@
 <% if user_signed_in? %>
   <%= current_user.username.capitalize %>
+  <%= link_to "Profile", user_path(current_user) %>
   <%= link_to "Log out", destroy_user_session_path, method: :delete %>
 <% end %>
 <h1><%= @pagy.count %> Articles</h1>
@@ -31,9 +32,3 @@
 </table>
 
 <%== pagy_bootstrap_nav(@pagy).html_safe %>
-
-<% if @drafts.any? %>
-  <% @drafts.each do |draft| %>
-    <p><%= draft.title %> | <%= link_to "Edit", edit_article_path(draft) %></p>
-  <% end %>
-<% end %>
