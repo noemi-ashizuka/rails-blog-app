@@ -3,54 +3,63 @@ require 'date'
 Article.destroy_all
 User.destroy_all
 
-puts "creating Users"
+puts "Creating Users, please wait..."
+
+users = []
 
 joe = User.create!(
+  username: "Joe",
   email: "joe@example.com",
-  password: "123456",
-  username: "joe"
+  password: "123456"
 )
 
-sylvia = User.create!(
-  email: "sylvia@example.com",
-  password: "123456",
-  username: "Sylvia"
+sarah = User.create!(
+  username: "Sarah",
+  email: "sarah@example.com",
+  password: "123456"
 )
 
-puts "Users created"
+10.times do
+  users << User.create!(
+    username: Faker::Internet.username,
+    email: Faker::Internet.email,
+    password: Faker::Internet.password
+  )
+end
 
-puts "creating articles"
 
-article_one = Article.create!(
-  title: "Article One",
-  content: "Quisque at pretium felis. Morbi nec consectetur odio. Integer et vehicula lorem.",
-  date: Date.new(2020, 8, 12),
-  is_published: true,
-  user: joe
+puts "Users created!"
+
+puts "creating articles, please wait..."
+
+12.times do
+  Article.create!(
+    title: Faker::Hipster.sentence,
+    content: Faker::Hipster.paragraph(sentence_count: 15),
+    date: Faker::Date.between(from: '2016-09-10', to: '2020-09-09'),
+    is_published: [true, false].sample,
+    user: joe
 )
+end
 
-article_two = Article.create!(
-  title: "Article Two",
-  content: "Nam commodo ultrices nisl, a dapibus tellus mattis sit amet. Cras tincidunt est a est tempor tristique non at massa.",
-  date: Date.new(2020, 6, 19),
-  is_published: true,
-  user: sylvia
-)
+12.times do
+  Article.create!(
+    title: Faker::Hipster.sentence,
+    content: Faker::Hipster.paragraph(sentence_count: 15),
+    date: Faker::Date.between(from: '2016-09-10', to: '2020-09-09'),
+    is_published: [true, false].sample,
+    user: sarah
+  )
+end
 
-article_three = Article.create!(
-  title: "Article Three",
-  content: "Sed venenatis auctor egestas. Sed tempor eu erat id tincidunt.",
-  date: Date.new(2020, 8, 5),
-  is_published: false,
-  user: sylvia
-)
+16.times do
+  Article.create!(
+    title: Faker::Hipster.sentence,
+    content: Faker::Hipster.paragraph(sentence_count: 15),
+    date: Faker::Date.between(from: '2016-09-10', to: '2020-09-09'),
+    is_published: true,
+    user: users.sample
+  )
+end
 
-article_four = Article.create!(
-  title: "Article Four",
-  content: "Quisque vehicula nunc non magna pellentesque mollis. Proin ut congue ipsum, et tempus justo.",
-  date: Date.new(2020, 7, 15),
-  is_published: false,
-  user: joe
-)
-
-puts "articles created"
+puts "Articles created!"
