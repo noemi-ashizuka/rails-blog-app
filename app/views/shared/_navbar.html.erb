@@ -1,0 +1,27 @@
+<!-- <nav class="navbar fixed-top navbar-dark bg-dark">
+  <% if user_signed_in? %>
+    <p class="navbar-text"><%= current_user.username.capitalize %></p>
+    <%= link_to "Profile", user_path(current_user), class:"nav-link" %>
+    <%= link_to "Log out", destroy_user_session_path, method: :delete, class:"nav-link" %>
+  <% end %>
+</nav> -->
+
+<nav class="navbar navbar-expand-lg fixed-top navbar-light bg-light">
+  <%= link_to "Blog App", root_path, class:"navbar-brand ml-2" %>
+  <button class="navbar-toggler mr-2" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse justify-content-end mr-2" id="navbarNavAltMarkup">
+    <div class="navbar-nav">
+      <%= link_to "Home", root_path, class:"nav-item nav-link" %>
+      <% if user_signed_in? %>
+        <%= link_to "Profile", user_path(current_user), class:"nav-item nav-link" %>
+        <%= link_to "New Article", new_article_path, class:"nav-item nav-link" %>
+        <%= link_to "Log out", destroy_user_session_path, method: :delete, class:"nav-item nav-link" %>
+      <% else %>
+        <%= link_to "Login", new_user_session_path, class:"nav-item nav-link" %>
+        <%= link_to "Sign up", new_user_registration_path, class:"nav-item nav-link" %>
+      <% end %>
+    </div>
+  </div>
+</nav>

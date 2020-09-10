@@ -30,6 +30,7 @@ gem 'devise'
 gem 'punching_bag'
 gem 'simple_form'
 gem 'bootstrap', '~> 5.0.0.alpha1'
+gem 'jquery-rails'
 gem 'pagy', '~> 3.5'
 gem 'pundit'
 
