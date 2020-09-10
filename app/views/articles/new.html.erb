@@ -1,13 +1,11 @@
-<div class="container">
-  <h1>New Article</h1>
+<h1>New Article</h1>
 
-  <%= simple_form_for @article do |f| %>
-    <div class="form-inputs my-3">
-      <%= f.input :title, label: "Title", class:"form-control m-3" %>
-      <%= f.date_field :date, as: :date, max: Date.today, html5: true, class: "form-control my-3", label: "Publish Date" %>
-      <%= f.input :is_published, as: :boolean %>
-      <%= f.input :content, as: :text, label:"Content" %>
-      <%= f.submit "Save", class:"btn btn-primary my-3" %>
-    </div>
-  <% end %> 
-</div>
+<%= simple_form_for @article do |f| %>
+  <div class="form-inputs my-3">
+    <%= f.input :title, label: "Title", class:"form-control m-3" %>
+    <%= f.date_field :date, as: :date, max: Date.today, html5: true, class: "form-control my-3", label: "Publish Date" %>
+    <%= f.input :is_published, as: :boolean %>
+    <%= f.input :content, as: :text, label:"Content" %>
+    <%= f.submit "Save", class:"btn btn-primary my-3" %>
+  </div>
+<% end %> 
