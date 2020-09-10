@@ -1,19 +1,19 @@
 <h1>Manage your articles</h1>
 
 <% if current_user.articles.published.any? %>
-  <h2>Your articles</h2>
+  <h2 class="my-3">Your articles</h2>
   <% current_user.articles.published.each do |article| %>
-    <p>
-      <%= article.title %> | <%= link_to "Show", article_path(article) %> | 
-      <%= link_to "Edit", edit_article_path(article) %> | 
-      <%= link_to "Delete", article_path(article), method: :delete %>
-    </p>
+    <h4>
+      <%= article.title %> <%= link_to "Show", article_path(article), class: "card-link btn btn-outline-primary" %>
+      <%= link_to icon("fas", "pencil-alt"), edit_article_path(article), class: "card-link btn btn-outline-warning" %>
+      <%= link_to icon("fas", "trash-alt"), article_path(article), method: :delete, class: "card-link btn btn-outline-danger" %>
+    </h4>
   <% end %>
 <% end %>
 
 <% if current_user.articles.draft.any? %>
-  <h2>Your unpublished articles</h2>
+  <h2 class="my-3">Your unpublished articles</h2>
   <% current_user.articles.draft.each do |draft| %>
-    <p><%= draft.title %> | <%= link_to "Edit", edit_article_path(draft) %></p>
+    <h4><%= draft.title %> <%= link_to icon("fas", "pencil-alt"), edit_article_path(draft), class: "card-link btn btn-outline-warning" %></h4>
   <% end %>
 <% end %>

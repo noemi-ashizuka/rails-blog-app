@@ -10,9 +10,10 @@ feature "User edits new article" do
     sign_in(@user)
     visit root_url
     
-    click_link "Edit"
+    find(".btn-outline-warning").click
     fill_in "Title", with: "An edited title"
     click_on "Edit"
+   
 
     expect(page).to have_content "An edited title"
   end
