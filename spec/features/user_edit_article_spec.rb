@@ -2,8 +2,8 @@ require "rails_helper"
 
 feature "User edits new article" do
   before(:each) do
-    @user = create(:user, email: "mimi@example.com", password: "123456", username: "mimi")
-    @article = create(:article, title: "Random article", content: "Some content in here", date: "2020/3/18", is_published: true, user: @user)
+    @user = create(:user)
+    @article = create(:article, user: @user)
   end
 
   scenario "successfully" do
