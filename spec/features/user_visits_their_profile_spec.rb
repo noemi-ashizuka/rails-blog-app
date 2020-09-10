@@ -1,6 +1,6 @@
 require "rails_helper"
 
-feature "User visits homepage" do
+feature "User visits their profile" do
   before(:each) do
     @user = create(:user)
   end

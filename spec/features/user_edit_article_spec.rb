@@ -7,9 +7,9 @@ feature "User edits new article" do
   end
 
   scenario "successfully" do
-    visit root_url
     sign_in(@user)
-
+    visit root_url
+    
     click_link "Edit"
     fill_in "Title", with: "An edited title"
     click_on "Edit"

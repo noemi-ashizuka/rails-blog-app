@@ -1,9 +1,11 @@
 <h1>New Article</h1>
 
 <%= simple_form_for @article do |f| %>
+  <div class="form-inputs">
   <%= f.input :title, label: "Title" %>
-  <%= f.input :date, as: :date, html5: true, label: "Publish Date" %>
+  <%= f.date_field :date, as: :date, max: Date.today, html5: true, class: "form-control", label: "Publish Date" %>
   <%= f.input :is_published, as: :boolean %>
   <%= f.input :content, as: :text, label:"Content" %>
   <%= f.submit "Save" %>
+  </div>
 <% end %> 
