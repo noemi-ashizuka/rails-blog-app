@@ -1,4 +1,5 @@
+<div class="container">
 <h1><%= @article.title %></h1>
-<p><%= @article.date %></p>
-
+<p><%= @article.date %> by <%= @article.user.username.capitalize %></p>
 <p><%= @article.content %></p>
+</div>

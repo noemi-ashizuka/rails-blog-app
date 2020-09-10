@@ -4,9 +4,9 @@ class ArticlesController < ApplicationController
 
   def index
     if params[:query].present?
-      @pagy, @articles = pagy(policy_scope(Article.published.where("lower(title) LIKE lower(?)", "%#{params[:query]}%").order(date: :desc)), items: 5)
+      @pagy, @articles = pagy(policy_scope(Article.published.where("lower(title) LIKE lower(?)", "%#{params[:query]}%").order(date: :desc)), items: 6)
     else
-      @pagy, @articles = pagy(policy_scope(Article.published.order(date: :desc)), items: 5)
+      @pagy, @articles = pagy(policy_scope(Article.published.order(date: :desc)), items: 6)
     end
   end
 
