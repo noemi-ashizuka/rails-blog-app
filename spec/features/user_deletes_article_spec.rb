@@ -7,8 +7,9 @@ feature "User deletes new article" do
   end
 
   scenario "successfully" do
-    visit root_url
     sign_in(@user)
+    visit root_url
+    
     click_on "Delete"
     
     expect(Article.count).to eq(0)

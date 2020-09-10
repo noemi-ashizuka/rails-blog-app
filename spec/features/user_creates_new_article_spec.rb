@@ -7,9 +7,9 @@ feature "User creates new article" do
   
   scenario "filling all the required fields" do
     
-    visit root_url
     sign_in(@user)
-  
+    visit root_url
+    
     click_on "New"
     fill_in "Title", with: "New Article"
     fill_in "Content", with: "Lorem ipsum something"
@@ -23,9 +23,9 @@ feature "User creates new article" do
 
   scenario "not filling a required field" do
     
-    visit root_url
     sign_in(@user)
-
+    visit root_url
+    
     click_on "New"
     fill_in "Content", with: "Lorem ipsum something"
     fill_in "article_date", with: "2020/8/9"
