@@ -14,7 +14,7 @@ class ArticlePolicy < ApplicationPolicy
   end
 
   def create?
-    !user.nil?
+    user.present?
   end
 
   def edit?
