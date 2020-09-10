@@ -17,19 +17,19 @@ RSpec.describe Article, type: :model do
   it 'should be valid with valid attributes' do
     expect(subject).to be_valid
   end
-  it 'should not valid without a title' do
+  it 'should not be valid without a title' do
     subject.title = nil
     expect(subject).to_not be_valid
   end
-  it 'should not valid without a content' do
+  it 'should not be valid without a content' do
     subject.content = nil
     expect(subject).to_not be_valid
   end
-  it 'should not valid without a date' do
+  it 'should not be valid without a date' do
     subject.date = nil
     expect(subject).to_not be_valid
   end
-  it 'should not valid without a user' do
+  it 'should not be valid without a user' do
     subject.user = nil
     expect(subject).to_not be_valid
   end
