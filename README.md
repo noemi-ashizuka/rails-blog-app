@@ -1,24 +1,31 @@
-# README
+# Blog App
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+* Ruby version 2.6.5
 
-Things you may want to cover:
+## Install
 
-* Ruby version
+### Clone the repository
 
-* System dependencies
+```shell
+git clone git@github.com:noemi-ashizuka/rails-blog-app.git
+cd rails-blog-app
+```
 
-* Configuration
+### Install dependencies
 
-* Database creation
+Using [Bundler](https://github.com/bundler/bundler):
 
-* Database initialization
+```shell
+bundle install
+```
 
-* How to run the test suite
+### Initialize the database
 
-* Services (job queues, cache servers, search engines, etc.)
+```shell
+rails db:create db:migrate db:seed
+```
+### Running tests
 
-* Deployment instructions
-
-* ...
+```shell
+rake spec
+```
