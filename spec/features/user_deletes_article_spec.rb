@@ -10,7 +10,7 @@ feature "User deletes new article" do
     sign_in(@user)
     visit root_url
     
-    click_on "Delete"
+    find(".btn-outline-danger").click
     
     expect(Article.count).to eq(0)
   end

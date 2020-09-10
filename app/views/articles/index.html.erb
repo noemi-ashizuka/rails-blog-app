@@ -13,8 +13,8 @@
         <h6 class="card-subtitle mb-2 text-muted"><%= article.hits %> views</h6>
         <%= link_to "Show", article_path(article), class: "card-link btn btn-outline-primary" %>
         <% if article.user == current_user %>
-          <%= link_to "Edit", edit_article_path(article), class: "card-link btn btn-outline-warning" %>
-          <%= link_to "Delete", article_path(article), method: :delete, class: "card-link btn btn-outline-danger" %>
+          <%= link_to icon("fas", "pencil-alt"), edit_article_path(article), class: "card-link btn btn-outline-warning" %>
+          <%= link_to icon("fas", "trash-alt"), article_path(article), method: :delete, class: "card-link btn btn-outline-danger" %>
         <% end %>
       </div>
     </div>
@@ -25,4 +25,3 @@
 <div class="m-3">
   <%== pagy_bootstrap_nav(@pagy).html_safe %>
 </div>
-
