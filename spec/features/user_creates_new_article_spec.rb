@@ -2,7 +2,7 @@ require "rails_helper"
 
 feature "User creates new article" do
   before(:each) do
-    @user = create(:user, email: "mimi@example.com", password: "123456", username: "mimi")
+    @user = create(:user)
   end
   
   scenario "filling all the required fields" do
@@ -13,6 +13,7 @@ feature "User creates new article" do
     click_on "New"
     fill_in "Title", with: "New Article"
     fill_in "Content", with: "Lorem ipsum something"
+    check "Is published"
     fill_in "article_date", with: "2020/8/9"
     click_on "Save"
   
