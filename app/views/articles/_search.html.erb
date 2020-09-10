@@ -1,8 +1,8 @@
-<%= form_tag articles_path, method: :get do %>
+<%= form_tag articles_path, method: :get, class:"d-flex" do %>
   <%= text_field_tag :query,
     params[:query],
-    class: "form-control",
-    placeholder: "Find an article"
+    placeholder: "Find an article",
+    class: "form-control p-2 mb-2 mr-sm-2"
   %>
-  <%= submit_tag "Search" %>
+  <%= submit_tag "Search", class: "btn btn-outline-primary mb-2 mr-sm-2" %>
 <% end %>
