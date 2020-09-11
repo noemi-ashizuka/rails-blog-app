@@ -1,5 +1,6 @@
 class ArticlesController < ApplicationController
   include Pagy::Backend
+  before_action :set_article, only: [:show, :edit, :update, :destroy]
   skip_before_action :authenticate_user!, only: [:index, :show]
 
   def index
@@ -11,9 +12,7 @@ class ArticlesController < ApplicationController
   end
 
   def show
-    @article = Article.find(params[:id])
     @article.punch(request)
-    authorize @article
   end
 
   def new
@@ -33,13 +32,9 @@ class ArticlesController < ApplicationController
   end
 
   def edit
-    @article = Article.find(params[:id])
-    authorize @article
   end
 
   def update
-    @article = Article.find(params[:id])
-    authorize @article
     if @article.update(article_params)
       redirect_to article_path(@article)
     else
@@ -48,13 +43,16 @@ class ArticlesController < ApplicationController
   end
 
   def destroy
-    @article = Article.find(params[:id])
-    authorize @article
     @article.destroy
     redirect_back(fallback_location: root_path)
   end
 
   private
+
+  def set_article
+    @article = Article.find(params[:id])
+    authorize @article
+  end
 
   def article_params
     params.require(:article).permit(:title, :content, :date, :is_published)
