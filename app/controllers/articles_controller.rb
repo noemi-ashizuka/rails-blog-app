@@ -51,7 +51,7 @@ class ArticlesController < ApplicationController
     @article = Article.find(params[:id])
     authorize @article
     @article.destroy
-    redirect_to articles_path
+    redirect_back(fallback_location: root_path)
   end
 
   private
