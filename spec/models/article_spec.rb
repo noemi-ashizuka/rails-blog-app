@@ -7,7 +7,7 @@ RSpec.describe Article, type: :model do
 
   subject {
     described_class.new(title: "My awesome article",
-                        content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+                        content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Risus in hendrerit gravida rutrum quisque non tellus orci. Urna condimentum mattis pellentesque id nibh tortor id aliquet.",
                         date: Date.new(2020, 7, 24),
                         user: @user_one)
   }
