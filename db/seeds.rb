@@ -36,7 +36,7 @@ puts "creating articles, please wait..."
   Article.create!(
     title: Faker::Hipster.sentence(word_count: 5),
     content: Faker::Hipster.paragraph(sentence_count: 15),
-    date: Faker::Date.between(from: '2016-09-10', to: '2020-09-09'),
+    publish_at: Faker::Date.between(from: '2016-09-10', to: '2020-09-09'),
     is_published: [true, false].sample,
     user: joe
 )
@@ -46,7 +46,7 @@ end
   Article.create!(
     title: Faker::Hipster.sentence(word_count: 5),
     content: Faker::Hipster.paragraph(sentence_count: 15),
-    date: Faker::Date.between(from: '2016-09-10', to: '2020-09-09'),
+    publish_at: Faker::Date.between(from: '2016-09-10', to: '2020-09-09'),
     is_published: [true, false].sample,
     user: sarah
   )
@@ -56,7 +56,7 @@ end
   Article.create!(
     title: Faker::Hipster.sentence(word_count: 5),
     content: Faker::Hipster.paragraph(sentence_count: 15),
-    date: Faker::Date.between(from: '2016-09-10', to: '2020-09-09'),
+    publish_at: Faker::Date.between(from: '2016-09-10', to: '2020-09-09'),
     is_published: true,
     user: users.sample
   )
