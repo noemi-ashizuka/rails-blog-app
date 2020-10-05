@@ -8,8 +8,7 @@ FactoryBot.define do
   factory :article do
     title { "A title" }
     content { "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Risus in hendrerit gravida rutrum quisque non tellus orci. Urna condimentum mattis pellentesque id nibh tortor id aliquet." }
-    date { "2020/7/24" }
-    is_published { true }
+    publish_at { "2020/7/24" }
     user { build(:user) }
   end
 
@@ -22,8 +21,7 @@ FactoryBot.define do
   factory :random_article do
     title { Faker::Hipster.sentence(word_count: 4) }
     content { Faker::Hipster.paragraph }
-    date { "2020/3/18" }
-    is_published { true }
+    punlish_at { "2020/3/18" }
     user {create(:random_user)}
   end 
 end
