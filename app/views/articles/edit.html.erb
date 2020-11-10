@@ -3,8 +3,9 @@
 <%= simple_form_for @article do |f| %>
   <div class="form-inputs my-3">
     <%= f.input :title, label: "Title", class:"form-control m-3" %>
-    <%= f.input :date, as: :date, html5: true, class: "form-control my-3", label: "Publish Date" %>
-    <%= f.input :is_published, as: :boolean %>
+    <!-- <%= f.input :date, as: :date, html5: true, class: "form-control my-3", label: "Publish Date" %>
+    <%= f.input :is_published, as: :boolean %> -->
+    <%= f.input :publish_at, as: :date, html5: true, class: "form-control my-3", label: "Publish Date"%>
     <%= f.input :content, as: :text, label:"Content" %>
     <%= f.submit "Edit", class:"btn btn-success my-3" %>
   </div>

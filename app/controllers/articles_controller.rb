@@ -5,9 +5,9 @@ class ArticlesController < ApplicationController
 
   def index
     if params[:query].present?
-      @pagy, @articles = pagy(policy_scope(Article.published.where("lower(title) LIKE lower(?)", "%#{params[:query]}%").order(date: :desc)), items: 6)
+      @pagy, @articles = pagy(policy_scope(Article.published.where("lower(title) LIKE lower(?)", "%#{params[:query]}%").order(publish_at: :desc)), items: 6)
     else
-      @pagy, @articles = pagy(policy_scope(Article.published.order(date: :desc)), items: 6)
+      @pagy, @articles = pagy(policy_scope(Article.published.order(publish_at: :desc)), items: 6)
     end
   end
 
@@ -55,6 +55,6 @@ class ArticlesController < ApplicationController
   end
 
   def article_params
-    params.require(:article).permit(:title, :content, :date, :is_published)
+    params.require(:article).permit(:title, :content, :date, :is_published, :publish_at)
   end
 end

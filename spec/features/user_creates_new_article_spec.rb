@@ -13,8 +13,7 @@ feature "User creates new article" do
     click_on "New"
     fill_in "Title", with: "New Article"
     fill_in "Content", with: "Lorem ipsum something"
-    check "Is published"
-    fill_in "article_date", with: "2020/8/9"
+    fill_in "Publish Date", with: "2020/8/9"
     click_on "Save"
   
    expect(page).to have_content "New Article"
@@ -28,7 +27,7 @@ feature "User creates new article" do
     
     click_on "New"
     fill_in "Content", with: "Lorem ipsum something"
-    fill_in "article_date", with: "2020/8/9"
+    fill_in "Publish Date", with: "2020/8/9"
     click_on "Save"
 
     expect(page).to have_content "can't be blank"
