@@ -2,3 +2,5 @@
 <p><%= @article.publish_at %> by <%= @article.user.username.capitalize %></p>
 <p><%= @article.content %></p>
 
+<%= render 'comments/form' %>
+

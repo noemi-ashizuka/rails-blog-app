@@ -13,6 +13,7 @@ class ArticlesController < ApplicationController
 
   def show
     @article.punch(request)
+    @comment = Comment.new
   end
 
   def new
