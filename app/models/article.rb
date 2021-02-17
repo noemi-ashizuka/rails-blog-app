@@ -3,6 +3,8 @@ class Article < ApplicationRecord
   scope :draft, -> { where('publish_at > ?', Time.zone.now) }
 
   belongs_to :user
+  has_many :comments, dependent: :destroy
+  
   validates :title, :content, :publish_at, presence: true
   validates :title, length: { maximum: 120, 
     too_long: "content can only be %{count} characters maximum" }

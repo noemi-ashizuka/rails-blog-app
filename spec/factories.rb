@@ -1,4 +1,10 @@
 FactoryBot.define do
+  factory :comment do
+    content { "" }
+    article { "" }
+    user { nil }
+  end
+
   factory :user do
     email { "joe@example.com" }
     password { "123456" }
