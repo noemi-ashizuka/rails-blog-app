@@ -4,3 +4,8 @@
 
 <%= render 'comments/form' %>
 
+<% @article.comments.each do |comment| %>
+  <p><%= comment.user.username %></p>
+  <p><%= comment.content %></p>
+<% end %>
+
