@@ -1,3 +1,29 @@
 // Place all the styles related to the comments controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
+.comment-cards {
+  display: flex; 
+  flex-direction: column;
+  margin-top: 4%;
+}
+
+.comment-card {
+  margin-top: 4%;
+  display: flex;
+
+  .comment-left {
+    text-align: center;
+  }
+
+  .comment-right {
+    align-self: center;
+    margin-left: 4%;
+  }
+}
+
+.avatar-round {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+}

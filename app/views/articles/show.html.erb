@@ -4,8 +4,17 @@
 
 <%= render 'comments/form' %>
 
-<% @article.comments.each do |comment| %>
-  <p><%= comment.user.username %></p>
-  <p><%= comment.content %></p>
-<% end %>
+<div class="comment-cards">
+  <% @article.comments.each do |comment| %>
+    <div class="comment-card">
+      <div class="comment-left">
+        <img src="https://kansai-resilience-forum.jp/wp-content/uploads/2019/02/IAFOR-Blank-Avatar-Image-1.jpg" class="avatar-round">
+        <p><%= comment.user.username %></p>
+      </div>
+      <div class="comment-right">
+        <p><%= comment.content %></p>
+      </div>
+    </div>
+  <% end %>
+</div>
 
